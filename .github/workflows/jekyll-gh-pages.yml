@@ -1,0 +1,73 @@
+name: deploy-book
+
+# Ejecutar en pushes a main o master (puedes descomentar "paths" si tu libro vive en un subdirectorio)
+on:
+  push:
+    branches:
+      - main
+      - master
+    # paths:
+    #   - some-subfolder/**
+
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    name: Build Jupyter Book
+    runs-on: ubuntu-latest
+    outputs:
+      artifact_id: ${{ steps.upload.outputs.artifact_id }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Cache pip and Jupyter Book execution cache
+        uses: actions/cache@v3
+        with:
+          # Cache pip packages
+          path: |
+            ~/.cache/pip
+            _build/.jupyter_cache
+          key: |
+            jupyter-book-cache-${{ runner.os }}-requirements-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            jupyter-book-cache-${{ runner.os }}-requirements-
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -U jupyter-book
+
+      - name: (Optional) Clean previous build
+        run: |
+          jupyter-book clean .
+
+      - name: Build the book
+        run: |
+          jupyter-book build .
+
+      - name: Upload built HTML as Pages artifact
+        id: upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/html
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
