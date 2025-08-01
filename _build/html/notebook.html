@@ -1,0 +1,1890 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Proyecto Gold Recovery &#8212; Extracción de Oro</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebook';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Cálculo de la recuperación" href="calculo_recueperacion.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Extracción de Oro - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Extracción de Oro - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="descripcion_datos.html">Descripción de datos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="calculo_recueperacion.html">Cálculo de la recuperación</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Proyecto Gold Recovery</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebook.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/notebook.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Proyecto Gold Recovery</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Proyecto Gold Recovery</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nota"><strong>NOTA:</strong></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="proyecto-gold-recovery">
+<h1>Proyecto Gold Recovery<a class="headerlink" href="#proyecto-gold-recovery" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importar librerias</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span> <span class="k">as</span> <span class="n">st</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_absolute_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">OneHotEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">shuffle</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cargar los datos</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/gold_recovery_train.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/gold_recovery_test.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">full</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/gold_recovery_full.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Mostrar tamaños</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tamaño de cada dataset:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train:&quot;</span><span class="p">,</span> <span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test:&quot;</span><span class="p">,</span> <span class="n">test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Full:&quot;</span><span class="p">,</span> <span class="n">full</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tamaño de cada dataset:
+Train: (16860, 86)
+Test: (5856, 52)
+Full: (22716, 86)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analizar datos del primer conjunto</span>
+<span class="n">train</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+DatetimeIndex: 16860 entries, 2016-01-15 00:00:00 to 2018-08-18 10:59:59
+Data columns (total 86 columns):
+ #   Column                                              Non-Null Count  Dtype  
+---  ------                                              --------------  -----  
+ 0   final.output.concentrate_ag                         16788 non-null  float64
+ 1   final.output.concentrate_pb                         16788 non-null  float64
+ 2   final.output.concentrate_sol                        16490 non-null  float64
+ 3   final.output.concentrate_au                         16789 non-null  float64
+ 4   final.output.recovery                               15339 non-null  float64
+ 5   final.output.tail_ag                                16794 non-null  float64
+ 6   final.output.tail_pb                                16677 non-null  float64
+ 7   final.output.tail_sol                               16715 non-null  float64
+ 8   final.output.tail_au                                16794 non-null  float64
+ 9   primary_cleaner.input.sulfate                       15553 non-null  float64
+ 10  primary_cleaner.input.depressant                    15598 non-null  float64
+ 11  primary_cleaner.input.feed_size                     16860 non-null  float64
+ 12  primary_cleaner.input.xanthate                      15875 non-null  float64
+ 13  primary_cleaner.output.concentrate_ag               16778 non-null  float64
+ 14  primary_cleaner.output.concentrate_pb               16502 non-null  float64
+ 15  primary_cleaner.output.concentrate_sol              16224 non-null  float64
+ 16  primary_cleaner.output.concentrate_au               16778 non-null  float64
+ 17  primary_cleaner.output.tail_ag                      16777 non-null  float64
+ 18  primary_cleaner.output.tail_pb                      16761 non-null  float64
+ 19  primary_cleaner.output.tail_sol                     16579 non-null  float64
+ 20  primary_cleaner.output.tail_au                      16777 non-null  float64
+ 21  primary_cleaner.state.floatbank8_a_air              16820 non-null  float64
+ 22  primary_cleaner.state.floatbank8_a_level            16827 non-null  float64
+ 23  primary_cleaner.state.floatbank8_b_air              16820 non-null  float64
+ 24  primary_cleaner.state.floatbank8_b_level            16833 non-null  float64
+ 25  primary_cleaner.state.floatbank8_c_air              16822 non-null  float64
+ 26  primary_cleaner.state.floatbank8_c_level            16833 non-null  float64
+ 27  primary_cleaner.state.floatbank8_d_air              16821 non-null  float64
+ 28  primary_cleaner.state.floatbank8_d_level            16833 non-null  float64
+ 29  rougher.calculation.sulfate_to_au_concentrate       16833 non-null  float64
+ 30  rougher.calculation.floatbank10_sulfate_to_au_feed  16833 non-null  float64
+ 31  rougher.calculation.floatbank11_sulfate_to_au_feed  16833 non-null  float64
+ 32  rougher.calculation.au_pb_ratio                     15618 non-null  float64
+ 33  rougher.input.feed_ag                               16778 non-null  float64
+ 34  rougher.input.feed_pb                               16632 non-null  float64
+ 35  rougher.input.feed_rate                             16347 non-null  float64
+ 36  rougher.input.feed_size                             16443 non-null  float64
+ 37  rougher.input.feed_sol                              16568 non-null  float64
+ 38  rougher.input.feed_au                               16777 non-null  float64
+ 39  rougher.input.floatbank10_sulfate                   15816 non-null  float64
+ 40  rougher.input.floatbank10_xanthate                  16514 non-null  float64
+ 41  rougher.input.floatbank11_sulfate                   16237 non-null  float64
+ 42  rougher.input.floatbank11_xanthate                  14956 non-null  float64
+ 43  rougher.output.concentrate_ag                       16778 non-null  float64
+ 44  rougher.output.concentrate_pb                       16778 non-null  float64
+ 45  rougher.output.concentrate_sol                      16698 non-null  float64
+ 46  rougher.output.concentrate_au                       16778 non-null  float64
+ 47  rougher.output.recovery                             14287 non-null  float64
+ 48  rougher.output.tail_ag                              14610 non-null  float64
+ 49  rougher.output.tail_pb                              16778 non-null  float64
+ 50  rougher.output.tail_sol                             14611 non-null  float64
+ 51  rougher.output.tail_au                              14611 non-null  float64
+ 52  rougher.state.floatbank10_a_air                     16807 non-null  float64
+ 53  rougher.state.floatbank10_a_level                   16807 non-null  float64
+ 54  rougher.state.floatbank10_b_air                     16807 non-null  float64
+ 55  rougher.state.floatbank10_b_level                   16807 non-null  float64
+ 56  rougher.state.floatbank10_c_air                     16807 non-null  float64
+ 57  rougher.state.floatbank10_c_level                   16814 non-null  float64
+ 58  rougher.state.floatbank10_d_air                     16802 non-null  float64
+ 59  rougher.state.floatbank10_d_level                   16809 non-null  float64
+ 60  rougher.state.floatbank10_e_air                     16257 non-null  float64
+ 61  rougher.state.floatbank10_e_level                   16809 non-null  float64
+ 62  rougher.state.floatbank10_f_air                     16802 non-null  float64
+ 63  rougher.state.floatbank10_f_level                   16802 non-null  float64
+ 64  secondary_cleaner.output.tail_ag                    16776 non-null  float64
+ 65  secondary_cleaner.output.tail_pb                    16764 non-null  float64
+ 66  secondary_cleaner.output.tail_sol                   14874 non-null  float64
+ 67  secondary_cleaner.output.tail_au                    16778 non-null  float64
+ 68  secondary_cleaner.state.floatbank2_a_air            16497 non-null  float64
+ 69  secondary_cleaner.state.floatbank2_a_level          16751 non-null  float64
+ 70  secondary_cleaner.state.floatbank2_b_air            16705 non-null  float64
+ 71  secondary_cleaner.state.floatbank2_b_level          16748 non-null  float64
+ 72  secondary_cleaner.state.floatbank3_a_air            16763 non-null  float64
+ 73  secondary_cleaner.state.floatbank3_a_level          16747 non-null  float64
+ 74  secondary_cleaner.state.floatbank3_b_air            16752 non-null  float64
+ 75  secondary_cleaner.state.floatbank3_b_level          16750 non-null  float64
+ 76  secondary_cleaner.state.floatbank4_a_air            16731 non-null  float64
+ 77  secondary_cleaner.state.floatbank4_a_level          16747 non-null  float64
+ 78  secondary_cleaner.state.floatbank4_b_air            16768 non-null  float64
+ 79  secondary_cleaner.state.floatbank4_b_level          16767 non-null  float64
+ 80  secondary_cleaner.state.floatbank5_a_air            16775 non-null  float64
+ 81  secondary_cleaner.state.floatbank5_a_level          16775 non-null  float64
+ 82  secondary_cleaner.state.floatbank5_b_air            16775 non-null  float64
+ 83  secondary_cleaner.state.floatbank5_b_level          16776 non-null  float64
+ 84  secondary_cleaner.state.floatbank6_a_air            16757 non-null  float64
+ 85  secondary_cleaner.state.floatbank6_a_level          16775 non-null  float64
+dtypes: float64(86)
+memory usage: 11.2 MB
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>final.output.concentrate_ag</th>
+      <th>final.output.concentrate_pb</th>
+      <th>final.output.concentrate_sol</th>
+      <th>final.output.concentrate_au</th>
+      <th>final.output.recovery</th>
+      <th>final.output.tail_ag</th>
+      <th>final.output.tail_pb</th>
+      <th>final.output.tail_sol</th>
+      <th>final.output.tail_au</th>
+      <th>primary_cleaner.input.sulfate</th>
+      <th>...</th>
+      <th>secondary_cleaner.state.floatbank4_a_air</th>
+      <th>secondary_cleaner.state.floatbank4_a_level</th>
+      <th>secondary_cleaner.state.floatbank4_b_air</th>
+      <th>secondary_cleaner.state.floatbank4_b_level</th>
+      <th>secondary_cleaner.state.floatbank5_a_air</th>
+      <th>secondary_cleaner.state.floatbank5_a_level</th>
+      <th>secondary_cleaner.state.floatbank5_b_air</th>
+      <th>secondary_cleaner.state.floatbank5_b_level</th>
+      <th>secondary_cleaner.state.floatbank6_a_air</th>
+      <th>secondary_cleaner.state.floatbank6_a_level</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-01-15 00:00:00</th>
+      <td>6.055403</td>
+      <td>9.889648</td>
+      <td>5.507324</td>
+      <td>42.192020</td>
+      <td>70.541216</td>
+      <td>10.411962</td>
+      <td>0.895447</td>
+      <td>16.904297</td>
+      <td>2.143149</td>
+      <td>127.092003</td>
+      <td>...</td>
+      <td>14.016835</td>
+      <td>-502.488007</td>
+      <td>12.099931</td>
+      <td>-504.715942</td>
+      <td>9.925633</td>
+      <td>-498.310211</td>
+      <td>8.079666</td>
+      <td>-500.470978</td>
+      <td>14.151341</td>
+      <td>-605.841980</td>
+    </tr>
+    <tr>
+      <th>2016-01-15 01:00:00</th>
+      <td>6.029369</td>
+      <td>9.968944</td>
+      <td>5.257781</td>
+      <td>42.701629</td>
+      <td>69.266198</td>
+      <td>10.462676</td>
+      <td>0.927452</td>
+      <td>16.634514</td>
+      <td>2.224930</td>
+      <td>125.629232</td>
+      <td>...</td>
+      <td>13.992281</td>
+      <td>-505.503262</td>
+      <td>11.950531</td>
+      <td>-501.331529</td>
+      <td>10.039245</td>
+      <td>-500.169983</td>
+      <td>7.984757</td>
+      <td>-500.582168</td>
+      <td>13.998353</td>
+      <td>-599.787184</td>
+    </tr>
+    <tr>
+      <th>2016-01-15 02:00:00</th>
+      <td>6.055926</td>
+      <td>10.213995</td>
+      <td>5.383759</td>
+      <td>42.657501</td>
+      <td>68.116445</td>
+      <td>10.507046</td>
+      <td>0.953716</td>
+      <td>16.208849</td>
+      <td>2.257889</td>
+      <td>123.819808</td>
+      <td>...</td>
+      <td>14.015015</td>
+      <td>-502.520901</td>
+      <td>11.912783</td>
+      <td>-501.133383</td>
+      <td>10.070913</td>
+      <td>-500.129135</td>
+      <td>8.013877</td>
+      <td>-500.517572</td>
+      <td>14.028663</td>
+      <td>-601.427363</td>
+    </tr>
+    <tr>
+      <th>2016-01-15 03:00:00</th>
+      <td>6.047977</td>
+      <td>9.977019</td>
+      <td>4.858634</td>
+      <td>42.689819</td>
+      <td>68.347543</td>
+      <td>10.422762</td>
+      <td>0.883763</td>
+      <td>16.532835</td>
+      <td>2.146849</td>
+      <td>122.270188</td>
+      <td>...</td>
+      <td>14.036510</td>
+      <td>-500.857308</td>
+      <td>11.999550</td>
+      <td>-501.193686</td>
+      <td>9.970366</td>
+      <td>-499.201640</td>
+      <td>7.977324</td>
+      <td>-500.255908</td>
+      <td>14.005551</td>
+      <td>-599.996129</td>
+    </tr>
+    <tr>
+      <th>2016-01-15 04:00:00</th>
+      <td>6.148599</td>
+      <td>10.142511</td>
+      <td>4.939416</td>
+      <td>42.774141</td>
+      <td>66.927016</td>
+      <td>10.360302</td>
+      <td>0.792826</td>
+      <td>16.525686</td>
+      <td>2.055292</td>
+      <td>117.988169</td>
+      <td>...</td>
+      <td>14.027298</td>
+      <td>-499.838632</td>
+      <td>11.953070</td>
+      <td>-501.053894</td>
+      <td>9.925709</td>
+      <td>-501.686727</td>
+      <td>7.894242</td>
+      <td>-500.356035</td>
+      <td>13.996647</td>
+      <td>-601.496691</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 86 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analizar datos del segundo conjunto</span>
+<span class="n">test</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+DatetimeIndex: 5856 entries, 2016-09-01 00:59:59 to 2017-12-31 23:59:59
+Data columns (total 52 columns):
+ #   Column                                      Non-Null Count  Dtype  
+---  ------                                      --------------  -----  
+ 0   primary_cleaner.input.sulfate               5554 non-null   float64
+ 1   primary_cleaner.input.depressant            5572 non-null   float64
+ 2   primary_cleaner.input.feed_size             5856 non-null   float64
+ 3   primary_cleaner.input.xanthate              5690 non-null   float64
+ 4   primary_cleaner.state.floatbank8_a_air      5840 non-null   float64
+ 5   primary_cleaner.state.floatbank8_a_level    5840 non-null   float64
+ 6   primary_cleaner.state.floatbank8_b_air      5840 non-null   float64
+ 7   primary_cleaner.state.floatbank8_b_level    5840 non-null   float64
+ 8   primary_cleaner.state.floatbank8_c_air      5840 non-null   float64
+ 9   primary_cleaner.state.floatbank8_c_level    5840 non-null   float64
+ 10  primary_cleaner.state.floatbank8_d_air      5840 non-null   float64
+ 11  primary_cleaner.state.floatbank8_d_level    5840 non-null   float64
+ 12  rougher.input.feed_ag                       5840 non-null   float64
+ 13  rougher.input.feed_pb                       5840 non-null   float64
+ 14  rougher.input.feed_rate                     5816 non-null   float64
+ 15  rougher.input.feed_size                     5834 non-null   float64
+ 16  rougher.input.feed_sol                      5789 non-null   float64
+ 17  rougher.input.feed_au                       5840 non-null   float64
+ 18  rougher.input.floatbank10_sulfate           5599 non-null   float64
+ 19  rougher.input.floatbank10_xanthate          5733 non-null   float64
+ 20  rougher.input.floatbank11_sulfate           5801 non-null   float64
+ 21  rougher.input.floatbank11_xanthate          5503 non-null   float64
+ 22  rougher.state.floatbank10_a_air             5839 non-null   float64
+ 23  rougher.state.floatbank10_a_level           5840 non-null   float64
+ 24  rougher.state.floatbank10_b_air             5839 non-null   float64
+ 25  rougher.state.floatbank10_b_level           5840 non-null   float64
+ 26  rougher.state.floatbank10_c_air             5839 non-null   float64
+ 27  rougher.state.floatbank10_c_level           5840 non-null   float64
+ 28  rougher.state.floatbank10_d_air             5839 non-null   float64
+ 29  rougher.state.floatbank10_d_level           5840 non-null   float64
+ 30  rougher.state.floatbank10_e_air             5839 non-null   float64
+ 31  rougher.state.floatbank10_e_level           5840 non-null   float64
+ 32  rougher.state.floatbank10_f_air             5839 non-null   float64
+ 33  rougher.state.floatbank10_f_level           5840 non-null   float64
+ 34  secondary_cleaner.state.floatbank2_a_air    5836 non-null   float64
+ 35  secondary_cleaner.state.floatbank2_a_level  5840 non-null   float64
+ 36  secondary_cleaner.state.floatbank2_b_air    5833 non-null   float64
+ 37  secondary_cleaner.state.floatbank2_b_level  5840 non-null   float64
+ 38  secondary_cleaner.state.floatbank3_a_air    5822 non-null   float64
+ 39  secondary_cleaner.state.floatbank3_a_level  5840 non-null   float64
+ 40  secondary_cleaner.state.floatbank3_b_air    5840 non-null   float64
+ 41  secondary_cleaner.state.floatbank3_b_level  5840 non-null   float64
+ 42  secondary_cleaner.state.floatbank4_a_air    5840 non-null   float64
+ 43  secondary_cleaner.state.floatbank4_a_level  5840 non-null   float64
+ 44  secondary_cleaner.state.floatbank4_b_air    5840 non-null   float64
+ 45  secondary_cleaner.state.floatbank4_b_level  5840 non-null   float64
+ 46  secondary_cleaner.state.floatbank5_a_air    5840 non-null   float64
+ 47  secondary_cleaner.state.floatbank5_a_level  5840 non-null   float64
+ 48  secondary_cleaner.state.floatbank5_b_air    5840 non-null   float64
+ 49  secondary_cleaner.state.floatbank5_b_level  5840 non-null   float64
+ 50  secondary_cleaner.state.floatbank6_a_air    5840 non-null   float64
+ 51  secondary_cleaner.state.floatbank6_a_level  5840 non-null   float64
+dtypes: float64(52)
+memory usage: 2.4 MB
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>primary_cleaner.input.sulfate</th>
+      <th>primary_cleaner.input.depressant</th>
+      <th>primary_cleaner.input.feed_size</th>
+      <th>primary_cleaner.input.xanthate</th>
+      <th>primary_cleaner.state.floatbank8_a_air</th>
+      <th>primary_cleaner.state.floatbank8_a_level</th>
+      <th>primary_cleaner.state.floatbank8_b_air</th>
+      <th>primary_cleaner.state.floatbank8_b_level</th>
+      <th>primary_cleaner.state.floatbank8_c_air</th>
+      <th>primary_cleaner.state.floatbank8_c_level</th>
+      <th>...</th>
+      <th>secondary_cleaner.state.floatbank4_a_air</th>
+      <th>secondary_cleaner.state.floatbank4_a_level</th>
+      <th>secondary_cleaner.state.floatbank4_b_air</th>
+      <th>secondary_cleaner.state.floatbank4_b_level</th>
+      <th>secondary_cleaner.state.floatbank5_a_air</th>
+      <th>secondary_cleaner.state.floatbank5_a_level</th>
+      <th>secondary_cleaner.state.floatbank5_b_air</th>
+      <th>secondary_cleaner.state.floatbank5_b_level</th>
+      <th>secondary_cleaner.state.floatbank6_a_air</th>
+      <th>secondary_cleaner.state.floatbank6_a_level</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-09-01 00:59:59</th>
+      <td>210.800909</td>
+      <td>14.993118</td>
+      <td>8.080000</td>
+      <td>1.005021</td>
+      <td>1398.981301</td>
+      <td>-500.225577</td>
+      <td>1399.144926</td>
+      <td>-499.919735</td>
+      <td>1400.102998</td>
+      <td>-500.704369</td>
+      <td>...</td>
+      <td>12.023554</td>
+      <td>-497.795834</td>
+      <td>8.016656</td>
+      <td>-501.289139</td>
+      <td>7.946562</td>
+      <td>-432.317850</td>
+      <td>4.872511</td>
+      <td>-500.037437</td>
+      <td>26.705889</td>
+      <td>-499.709414</td>
+    </tr>
+    <tr>
+      <th>2016-09-01 01:59:59</th>
+      <td>215.392455</td>
+      <td>14.987471</td>
+      <td>8.080000</td>
+      <td>0.990469</td>
+      <td>1398.777912</td>
+      <td>-500.057435</td>
+      <td>1398.055362</td>
+      <td>-499.778182</td>
+      <td>1396.151033</td>
+      <td>-499.240168</td>
+      <td>...</td>
+      <td>12.058140</td>
+      <td>-498.695773</td>
+      <td>8.130979</td>
+      <td>-499.634209</td>
+      <td>7.958270</td>
+      <td>-525.839648</td>
+      <td>4.878850</td>
+      <td>-500.162375</td>
+      <td>25.019940</td>
+      <td>-499.819438</td>
+    </tr>
+    <tr>
+      <th>2016-09-01 02:59:59</th>
+      <td>215.259946</td>
+      <td>12.884934</td>
+      <td>7.786667</td>
+      <td>0.996043</td>
+      <td>1398.493666</td>
+      <td>-500.868360</td>
+      <td>1398.860436</td>
+      <td>-499.764529</td>
+      <td>1398.075709</td>
+      <td>-502.151509</td>
+      <td>...</td>
+      <td>11.962366</td>
+      <td>-498.767484</td>
+      <td>8.096893</td>
+      <td>-500.827423</td>
+      <td>8.071056</td>
+      <td>-500.801673</td>
+      <td>4.905125</td>
+      <td>-499.828510</td>
+      <td>24.994862</td>
+      <td>-500.622559</td>
+    </tr>
+    <tr>
+      <th>2016-09-01 03:59:59</th>
+      <td>215.336236</td>
+      <td>12.006805</td>
+      <td>7.640000</td>
+      <td>0.863514</td>
+      <td>1399.618111</td>
+      <td>-498.863574</td>
+      <td>1397.440120</td>
+      <td>-499.211024</td>
+      <td>1400.129303</td>
+      <td>-498.355873</td>
+      <td>...</td>
+      <td>12.033091</td>
+      <td>-498.350935</td>
+      <td>8.074946</td>
+      <td>-499.474407</td>
+      <td>7.897085</td>
+      <td>-500.868509</td>
+      <td>4.931400</td>
+      <td>-499.963623</td>
+      <td>24.948919</td>
+      <td>-498.709987</td>
+    </tr>
+    <tr>
+      <th>2016-09-01 04:59:59</th>
+      <td>199.099327</td>
+      <td>10.682530</td>
+      <td>7.530000</td>
+      <td>0.805575</td>
+      <td>1401.268123</td>
+      <td>-500.808305</td>
+      <td>1398.128818</td>
+      <td>-499.504543</td>
+      <td>1402.172226</td>
+      <td>-500.810606</td>
+      <td>...</td>
+      <td>12.025367</td>
+      <td>-500.786497</td>
+      <td>8.054678</td>
+      <td>-500.397500</td>
+      <td>8.107890</td>
+      <td>-509.526725</td>
+      <td>4.957674</td>
+      <td>-500.360026</td>
+      <td>25.003331</td>
+      <td>-500.856333</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 52 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analizar datos del tercer conjunto</span>
+<span class="n">full</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">full</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+DatetimeIndex: 22716 entries, 2016-01-15 00:00:00 to 2018-08-18 10:59:59
+Data columns (total 86 columns):
+ #   Column                                              Non-Null Count  Dtype  
+---  ------                                              --------------  -----  
+ 0   final.output.concentrate_ag                         22627 non-null  float64
+ 1   final.output.concentrate_pb                         22629 non-null  float64
+ 2   final.output.concentrate_sol                        22331 non-null  float64
+ 3   final.output.concentrate_au                         22630 non-null  float64
+ 4   final.output.recovery                               20753 non-null  float64
+ 5   final.output.tail_ag                                22633 non-null  float64
+ 6   final.output.tail_pb                                22516 non-null  float64
+ 7   final.output.tail_sol                               22445 non-null  float64
+ 8   final.output.tail_au                                22635 non-null  float64
+ 9   primary_cleaner.input.sulfate                       21107 non-null  float64
+ 10  primary_cleaner.input.depressant                    21170 non-null  float64
+ 11  primary_cleaner.input.feed_size                     22716 non-null  float64
+ 12  primary_cleaner.input.xanthate                      21565 non-null  float64
+ 13  primary_cleaner.output.concentrate_ag               22618 non-null  float64
+ 14  primary_cleaner.output.concentrate_pb               22268 non-null  float64
+ 15  primary_cleaner.output.concentrate_sol              21918 non-null  float64
+ 16  primary_cleaner.output.concentrate_au               22618 non-null  float64
+ 17  primary_cleaner.output.tail_ag                      22614 non-null  float64
+ 18  primary_cleaner.output.tail_pb                      22594 non-null  float64
+ 19  primary_cleaner.output.tail_sol                     22365 non-null  float64
+ 20  primary_cleaner.output.tail_au                      22617 non-null  float64
+ 21  primary_cleaner.state.floatbank8_a_air              22660 non-null  float64
+ 22  primary_cleaner.state.floatbank8_a_level            22667 non-null  float64
+ 23  primary_cleaner.state.floatbank8_b_air              22660 non-null  float64
+ 24  primary_cleaner.state.floatbank8_b_level            22673 non-null  float64
+ 25  primary_cleaner.state.floatbank8_c_air              22662 non-null  float64
+ 26  primary_cleaner.state.floatbank8_c_level            22673 non-null  float64
+ 27  primary_cleaner.state.floatbank8_d_air              22661 non-null  float64
+ 28  primary_cleaner.state.floatbank8_d_level            22673 non-null  float64
+ 29  rougher.calculation.sulfate_to_au_concentrate       22672 non-null  float64
+ 30  rougher.calculation.floatbank10_sulfate_to_au_feed  22672 non-null  float64
+ 31  rougher.calculation.floatbank11_sulfate_to_au_feed  22672 non-null  float64
+ 32  rougher.calculation.au_pb_ratio                     21089 non-null  float64
+ 33  rougher.input.feed_ag                               22618 non-null  float64
+ 34  rougher.input.feed_pb                               22472 non-null  float64
+ 35  rougher.input.feed_rate                             22163 non-null  float64
+ 36  rougher.input.feed_size                             22277 non-null  float64
+ 37  rougher.input.feed_sol                              22357 non-null  float64
+ 38  rougher.input.feed_au                               22617 non-null  float64
+ 39  rougher.input.floatbank10_sulfate                   21415 non-null  float64
+ 40  rougher.input.floatbank10_xanthate                  22247 non-null  float64
+ 41  rougher.input.floatbank11_sulfate                   22038 non-null  float64
+ 42  rougher.input.floatbank11_xanthate                  20459 non-null  float64
+ 43  rougher.output.concentrate_ag                       22618 non-null  float64
+ 44  rougher.output.concentrate_pb                       22618 non-null  float64
+ 45  rougher.output.concentrate_sol                      22526 non-null  float64
+ 46  rougher.output.concentrate_au                       22618 non-null  float64
+ 47  rougher.output.recovery                             19597 non-null  float64
+ 48  rougher.output.tail_ag                              19979 non-null  float64
+ 49  rougher.output.tail_pb                              22618 non-null  float64
+ 50  rougher.output.tail_sol                             19980 non-null  float64
+ 51  rougher.output.tail_au                              19980 non-null  float64
+ 52  rougher.state.floatbank10_a_air                     22646 non-null  float64
+ 53  rougher.state.floatbank10_a_level                   22647 non-null  float64
+ 54  rougher.state.floatbank10_b_air                     22646 non-null  float64
+ 55  rougher.state.floatbank10_b_level                   22647 non-null  float64
+ 56  rougher.state.floatbank10_c_air                     22646 non-null  float64
+ 57  rougher.state.floatbank10_c_level                   22654 non-null  float64
+ 58  rougher.state.floatbank10_d_air                     22641 non-null  float64
+ 59  rougher.state.floatbank10_d_level                   22649 non-null  float64
+ 60  rougher.state.floatbank10_e_air                     22096 non-null  float64
+ 61  rougher.state.floatbank10_e_level                   22649 non-null  float64
+ 62  rougher.state.floatbank10_f_air                     22641 non-null  float64
+ 63  rougher.state.floatbank10_f_level                   22642 non-null  float64
+ 64  secondary_cleaner.output.tail_ag                    22616 non-null  float64
+ 65  secondary_cleaner.output.tail_pb                    22600 non-null  float64
+ 66  secondary_cleaner.output.tail_sol                   20501 non-null  float64
+ 67  secondary_cleaner.output.tail_au                    22618 non-null  float64
+ 68  secondary_cleaner.state.floatbank2_a_air            22333 non-null  float64
+ 69  secondary_cleaner.state.floatbank2_a_level          22591 non-null  float64
+ 70  secondary_cleaner.state.floatbank2_b_air            22538 non-null  float64
+ 71  secondary_cleaner.state.floatbank2_b_level          22588 non-null  float64
+ 72  secondary_cleaner.state.floatbank3_a_air            22585 non-null  float64
+ 73  secondary_cleaner.state.floatbank3_a_level          22587 non-null  float64
+ 74  secondary_cleaner.state.floatbank3_b_air            22592 non-null  float64
+ 75  secondary_cleaner.state.floatbank3_b_level          22590 non-null  float64
+ 76  secondary_cleaner.state.floatbank4_a_air            22571 non-null  float64
+ 77  secondary_cleaner.state.floatbank4_a_level          22587 non-null  float64
+ 78  secondary_cleaner.state.floatbank4_b_air            22608 non-null  float64
+ 79  secondary_cleaner.state.floatbank4_b_level          22607 non-null  float64
+ 80  secondary_cleaner.state.floatbank5_a_air            22615 non-null  float64
+ 81  secondary_cleaner.state.floatbank5_a_level          22615 non-null  float64
+ 82  secondary_cleaner.state.floatbank5_b_air            22615 non-null  float64
+ 83  secondary_cleaner.state.floatbank5_b_level          22616 non-null  float64
+ 84  secondary_cleaner.state.floatbank6_a_air            22597 non-null  float64
+ 85  secondary_cleaner.state.floatbank6_a_level          22615 non-null  float64
+dtypes: float64(86)
+memory usage: 15.1 MB
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>final.output.concentrate_ag</th>
+      <th>final.output.concentrate_pb</th>
+      <th>final.output.concentrate_sol</th>
+      <th>final.output.concentrate_au</th>
+      <th>final.output.recovery</th>
+      <th>final.output.tail_ag</th>
+      <th>final.output.tail_pb</th>
+      <th>final.output.tail_sol</th>
+      <th>final.output.tail_au</th>
+      <th>primary_cleaner.input.sulfate</th>
+      <th>...</th>
+      <th>secondary_cleaner.state.floatbank4_a_air</th>
+      <th>secondary_cleaner.state.floatbank4_a_level</th>
+      <th>secondary_cleaner.state.floatbank4_b_air</th>
+      <th>secondary_cleaner.state.floatbank4_b_level</th>
+      <th>secondary_cleaner.state.floatbank5_a_air</th>
+      <th>secondary_cleaner.state.floatbank5_a_level</th>
+      <th>secondary_cleaner.state.floatbank5_b_air</th>
+      <th>secondary_cleaner.state.floatbank5_b_level</th>
+      <th>secondary_cleaner.state.floatbank6_a_air</th>
+      <th>secondary_cleaner.state.floatbank6_a_level</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-01-15 00:00:00</th>
+      <td>6.055403</td>
+      <td>9.889648</td>
+      <td>5.507324</td>
+      <td>42.192020</td>
+      <td>70.541216</td>
+      <td>10.411962</td>
+      <td>0.895447</td>
+      <td>16.904297</td>
+      <td>2.143149</td>
+      <td>127.092003</td>
+      <td>...</td>
+      <td>14.016835</td>
+      <td>-502.488007</td>
+      <td>12.099931</td>
+      <td>-504.715942</td>
+      <td>9.925633</td>
+      <td>-498.310211</td>
+      <td>8.079666</td>
+      <td>-500.470978</td>
+      <td>14.151341</td>
+      <td>-605.841980</td>
+    </tr>
+    <tr>
+      <th>2016-01-15 01:00:00</th>
+      <td>6.029369</td>
+      <td>9.968944</td>
+      <td>5.257781</td>
+      <td>42.701629</td>
+      <td>69.266198</td>
+      <td>10.462676</td>
+      <td>0.927452</td>
+      <td>16.634514</td>
+      <td>2.224930</td>
+      <td>125.629232</td>
+      <td>...</td>
+      <td>13.992281</td>
+      <td>-505.503262</td>
+      <td>11.950531</td>
+      <td>-501.331529</td>
+      <td>10.039245</td>
+      <td>-500.169983</td>
+      <td>7.984757</td>
+      <td>-500.582168</td>
+      <td>13.998353</td>
+      <td>-599.787184</td>
+    </tr>
+    <tr>
+      <th>2016-01-15 02:00:00</th>
+      <td>6.055926</td>
+      <td>10.213995</td>
+      <td>5.383759</td>
+      <td>42.657501</td>
+      <td>68.116445</td>
+      <td>10.507046</td>
+      <td>0.953716</td>
+      <td>16.208849</td>
+      <td>2.257889</td>
+      <td>123.819808</td>
+      <td>...</td>
+      <td>14.015015</td>
+      <td>-502.520901</td>
+      <td>11.912783</td>
+      <td>-501.133383</td>
+      <td>10.070913</td>
+      <td>-500.129135</td>
+      <td>8.013877</td>
+      <td>-500.517572</td>
+      <td>14.028663</td>
+      <td>-601.427363</td>
+    </tr>
+    <tr>
+      <th>2016-01-15 03:00:00</th>
+      <td>6.047977</td>
+      <td>9.977019</td>
+      <td>4.858634</td>
+      <td>42.689819</td>
+      <td>68.347543</td>
+      <td>10.422762</td>
+      <td>0.883763</td>
+      <td>16.532835</td>
+      <td>2.146849</td>
+      <td>122.270188</td>
+      <td>...</td>
+      <td>14.036510</td>
+      <td>-500.857308</td>
+      <td>11.999550</td>
+      <td>-501.193686</td>
+      <td>9.970366</td>
+      <td>-499.201640</td>
+      <td>7.977324</td>
+      <td>-500.255908</td>
+      <td>14.005551</td>
+      <td>-599.996129</td>
+    </tr>
+    <tr>
+      <th>2016-01-15 04:00:00</th>
+      <td>6.148599</td>
+      <td>10.142511</td>
+      <td>4.939416</td>
+      <td>42.774141</td>
+      <td>66.927016</td>
+      <td>10.360302</td>
+      <td>0.792826</td>
+      <td>16.525686</td>
+      <td>2.055292</td>
+      <td>117.988169</td>
+      <td>...</td>
+      <td>14.027298</td>
+      <td>-499.838632</td>
+      <td>11.953070</td>
+      <td>-501.053894</td>
+      <td>9.925709</td>
+      <td>-501.686727</td>
+      <td>7.894242</td>
+      <td>-500.356035</td>
+      <td>13.996647</td>
+      <td>-601.496691</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 86 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraer columnas necesarias</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;rougher.output.concentrate_au&#39;</span><span class="p">]</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;rougher.input.feed_au&#39;</span><span class="p">]</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;rougher.output.tail_au&#39;</span><span class="p">]</span>
+
+<span class="c1"># Calcular recuperación</span>
+<span class="n">recovery_calc</span> <span class="o">=</span> <span class="n">C</span> <span class="o">*</span> <span class="p">(</span><span class="n">F</span> <span class="o">-</span> <span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">F</span> <span class="o">*</span> <span class="p">(</span><span class="n">C</span> <span class="o">-</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Valores reales</span>
+<span class="n">recovery_real</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;rougher.output.recovery&#39;</span><span class="p">]</span>
+
+<span class="c1"># Eliminar filas con NaN en ambos (para poder comparar)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">recovery_real</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">recovery_calc</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span>
+<span class="n">recovery_calc</span> <span class="o">=</span> <span class="n">recovery_calc</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+<span class="n">recovery_real</span> <span class="o">=</span> <span class="n">recovery_real</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+<span class="c1"># Calcular Error Absoluto Medio (EAM)</span>
+<span class="n">eam</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">recovery_real</span><span class="p">,</span> <span class="n">recovery_calc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Error Absoluto Medio (EAM) entre recuperación real y calculada: </span><span class="si">{</span><span class="n">eam</span><span class="si">:</span><span class="s1">,.5f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error Absoluto Medio (EAM) entre recuperación real y calculada: 0.00000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista de columnas del entrenamiento y prueba</span>
+<span class="n">train_cols</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">test_cols</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="c1"># Ver columnas que están en entrenamiento pero no en prueba</span>
+<span class="n">missing_cols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">train_cols</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_cols</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Columnas ausentes en el conjunto de prueba:</span><span class="se">\n</span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">missing_cols</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Columnas ausentes en el conjunto de prueba:
+[&#39;final.output.concentrate_ag&#39;, &#39;final.output.concentrate_au&#39;, &#39;final.output.concentrate_pb&#39;, &#39;final.output.concentrate_sol&#39;, &#39;final.output.recovery&#39;, &#39;final.output.tail_ag&#39;, &#39;final.output.tail_au&#39;, &#39;final.output.tail_pb&#39;, &#39;final.output.tail_sol&#39;, &#39;primary_cleaner.output.concentrate_ag&#39;, &#39;primary_cleaner.output.concentrate_au&#39;, &#39;primary_cleaner.output.concentrate_pb&#39;, &#39;primary_cleaner.output.concentrate_sol&#39;, &#39;primary_cleaner.output.tail_ag&#39;, &#39;primary_cleaner.output.tail_au&#39;, &#39;primary_cleaner.output.tail_pb&#39;, &#39;primary_cleaner.output.tail_sol&#39;, &#39;rougher.calculation.au_pb_ratio&#39;, &#39;rougher.calculation.floatbank10_sulfate_to_au_feed&#39;, &#39;rougher.calculation.floatbank11_sulfate_to_au_feed&#39;, &#39;rougher.calculation.sulfate_to_au_concentrate&#39;, &#39;rougher.output.concentrate_ag&#39;, &#39;rougher.output.concentrate_au&#39;, &#39;rougher.output.concentrate_pb&#39;, &#39;rougher.output.concentrate_sol&#39;, &#39;rougher.output.recovery&#39;, &#39;rougher.output.tail_ag&#39;, &#39;rougher.output.tail_au&#39;, &#39;rougher.output.tail_pb&#39;, &#39;rougher.output.tail_sol&#39;, &#39;secondary_cleaner.output.tail_ag&#39;, &#39;secondary_cleaner.output.tail_au&#39;, &#39;secondary_cleaner.output.tail_pb&#39;, &#39;secondary_cleaner.output.tail_sol&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTA:</strong></p>
+<p>El conjunto de prueba no contiene todas las columnas, porque algunas solo están disponibles después del proceso (por ejemplo, columnas de salida como rougher.output.* o final.output.*).
+Como no se pueden usar para predecir, se debe entrenar el modelo solo con las columnas disponibles también en el test.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Columnas disponibles tanto en entrenamiento como prueba</span>
+<span class="n">features</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+<span class="n">target_rougher</span> <span class="o">=</span> <span class="s1">&#39;rougher.output.recovery&#39;</span>
+<span class="n">target_final</span> <span class="o">=</span> <span class="s1">&#39;final.output.recovery&#39;</span>
+
+<span class="c1"># Asegúrate de que los targets no tengan NaNs</span>
+<span class="n">df_model</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="n">features</span> <span class="o">+</span> <span class="p">[</span><span class="n">target_rougher</span><span class="p">,</span> <span class="n">target_final</span><span class="p">])</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">df_model</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+<span class="n">y_train_rougher</span> <span class="o">=</span> <span class="n">df_model</span><span class="p">[</span><span class="n">target_rougher</span><span class="p">]</span>
+<span class="n">y_train_final</span> <span class="o">=</span> <span class="n">df_model</span><span class="p">[</span><span class="n">target_final</span><span class="p">]</span>
+
+<span class="c1"># Para el test (usado al final para predecir y evaluar), solo quedan las features</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Diccionario para guardar los resultados</span>
+<span class="n">concentraciones_promedio</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Etapas a evaluar</span>
+<span class="n">etapas</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Feed&#39;</span><span class="p">:</span> <span class="s1">&#39;rougher.input.feed_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Rougher Concentrate&#39;</span><span class="p">:</span> <span class="s1">&#39;rougher.output.concentrate_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Final Concentrate&#39;</span><span class="p">:</span> <span class="s1">&#39;final.output.concentrate_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Tail&#39;</span><span class="p">:</span> <span class="s1">&#39;rougher.output.tail_&#39;</span>
+<span class="p">}</span>
+
+<span class="n">metales</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;au&#39;</span><span class="p">,</span> <span class="s1">&#39;ag&#39;</span><span class="p">,</span> <span class="s1">&#39;pb&#39;</span><span class="p">]</span>
+
+<span class="c1"># Calculamos el promedio por etapa y metal</span>
+<span class="k">for</span> <span class="n">metal</span> <span class="ow">in</span> <span class="n">metales</span><span class="p">:</span>
+    <span class="n">concentraciones_promedio</span><span class="p">[</span><span class="n">metal</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">nombre_etapa</span><span class="p">,</span> <span class="n">prefijo</span> <span class="ow">in</span> <span class="n">etapas</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">columna</span> <span class="o">=</span> <span class="n">prefijo</span> <span class="o">+</span> <span class="n">metal</span>
+        <span class="k">if</span> <span class="n">columna</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">promedio</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">columna</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            <span class="n">concentraciones_promedio</span><span class="p">[</span><span class="n">metal</span><span class="p">][</span><span class="n">nombre_etapa</span><span class="p">]</span> <span class="o">=</span> <span class="n">promedio</span>
+
+<span class="c1"># Convertir a DataFrame para visualizar mejor</span>
+<span class="n">df_concentraciones</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">concentraciones_promedio</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Promedio de concentraciones por etapa:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_concentraciones</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Promedio de concentraciones por etapa:
+
+                        au     ag    pb
+Feed                  7.17   7.83  3.22
+Rougher Concentrate  17.40  10.58  6.88
+Final Concentrate    39.47   4.72  9.11
+Tail                  1.76   5.57  0.60
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTA:</strong>
+<br> AU (Oro): La concentración aumenta mucho.
+<br> AG y PB (impurezas): AG disminuyen en el concentrado final y PB no lo hace.
+<br> Las colas (tail) tienen bajo contenido de oro.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Asegurarnos de que ambos estén ordenados por fecha</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+
+<span class="c1"># Unir las columnas relevantes para comparar</span>
+<span class="n">train_sizes</span> <span class="o">=</span> <span class="n">train</span><span class="p">[[</span><span class="s1">&#39;rougher.input.feed_size&#39;</span><span class="p">,</span> <span class="s1">&#39;primary_cleaner.input.feed_size&#39;</span><span class="p">]]</span>
+<span class="n">test_sizes</span> <span class="o">=</span> <span class="n">test</span><span class="p">[[</span><span class="s1">&#39;rougher.input.feed_size&#39;</span><span class="p">,</span> <span class="s1">&#39;primary_cleaner.input.feed_size&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comparacion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Train mean&#39;</span><span class="p">:</span> <span class="n">train_sizes</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+    <span class="s1">&#39;Test mean&#39;</span><span class="p">:</span> <span class="n">test_sizes</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+    <span class="s1">&#39;Train std&#39;</span><span class="p">:</span> <span class="n">train_sizes</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span>
+    <span class="s1">&#39;Test std&#39;</span><span class="p">:</span> <span class="n">test_sizes</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">comparacion</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                 Train mean  Test mean  Train std  Test std
+rougher.input.feed_size               58.68      55.94      23.92     22.72
+primary_cleaner.input.feed_size        7.30       7.26       0.62      0.61
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Etapas a revisar</span>
+<span class="n">etapas</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;rougher.input.feed_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rougher.output.concentrate_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;final.output.concentrate_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rougher.output.tail_&#39;</span>
+<span class="p">]</span>
+
+<span class="n">metales</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;au&#39;</span><span class="p">,</span> <span class="s1">&#39;ag&#39;</span><span class="p">,</span> <span class="s1">&#39;pb&#39;</span><span class="p">]</span>
+
+<span class="c1"># Analizar la suma de concentraciones por etapa</span>
+<span class="k">for</span> <span class="n">etapa</span> <span class="ow">in</span> <span class="n">etapas</span><span class="p">:</span>
+    <span class="n">columnas</span> <span class="o">=</span> <span class="p">[</span><span class="n">etapa</span> <span class="o">+</span> <span class="n">metal</span> <span class="k">for</span> <span class="n">metal</span> <span class="ow">in</span> <span class="n">metales</span> <span class="k">if</span> <span class="n">etapa</span> <span class="o">+</span> <span class="n">metal</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    
+    <span class="c1"># Si existen las columnas, calculamos la suma</span>
+    <span class="k">if</span> <span class="n">columnas</span><span class="p">:</span>
+        <span class="n">train</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">etapa</span><span class="si">}</span><span class="s1">total_conc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">columnas</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+        <span class="n">train</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">etapa</span><span class="si">}</span><span class="s1">total_conc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Suma de concentraciones en etapa: </span><span class="si">{</span><span class="n">etapa</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Suma de concentraciones (%)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9c9551d3dbe1a5c260a20b5d15aa7e792df18fa4f8831ef2331680b495830f16.png" src="_images/9c9551d3dbe1a5c260a20b5d15aa7e792df18fa4f8831ef2331680b495830f16.png" />
+<img alt="_images/c0c527541067b3b2e2f8f2a052157d5c920477ad2e6468eef82095bb0d4d40dc.png" src="_images/c0c527541067b3b2e2f8f2a052157d5c920477ad2e6468eef82095bb0d4d40dc.png" />
+<img alt="_images/6f946a2c8416c079325eb567929e22fc6dbea1f362bde098562cfffe039e8c38.png" src="_images/6f946a2c8416c079325eb567929e22fc6dbea1f362bde098562cfffe039e8c38.png" />
+<img alt="_images/74c493000e47d311d6f4cfbe7851a111d426e83a4174cff8886e34bef8fc1927.png" src="_images/74c493000e47d311d6f4cfbe7851a111d426e83a4174cff8886e34bef8fc1927.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Etapas a revisar</span>
+<span class="n">etapas</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;rougher.input.feed_&#39;</span><span class="p">:</span> <span class="s1">&#39;feed&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rougher.output.concentrate_&#39;</span><span class="p">:</span> <span class="s1">&#39;rougher_conc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;final.output.concentrate_&#39;</span><span class="p">:</span> <span class="s1">&#39;final_conc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rougher.output.tail_&#39;</span><span class="p">:</span> <span class="s1">&#39;tail&#39;</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">prefijo</span><span class="p">,</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">etapas</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">columnas</span> <span class="o">=</span> <span class="p">[</span><span class="n">prefijo</span> <span class="o">+</span> <span class="n">metal</span> <span class="k">for</span> <span class="n">metal</span> <span class="ow">in</span> <span class="n">metales</span> <span class="k">if</span> <span class="n">prefijo</span> <span class="o">+</span> <span class="n">metal</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">columnas</span><span class="p">:</span>
+        <span class="n">train</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s1">_total_conc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">columnas</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Condición para mantener solo filas válidas</span>
+<span class="n">condicion_valida</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;feed_total_conc&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;rougher_conc_total_conc&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;final_conc_total_conc&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;tail_total_conc&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Aplicar la limpieza</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">condicion_valida</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">etapa</span> <span class="ow">in</span> <span class="n">etapas</span><span class="p">:</span>
+    <span class="n">columnas</span> <span class="o">=</span> <span class="p">[</span><span class="n">etapa</span> <span class="o">+</span> <span class="n">metal</span> <span class="k">for</span> <span class="n">metal</span> <span class="ow">in</span> <span class="n">metales</span> <span class="k">if</span> <span class="n">etapa</span> <span class="o">+</span> <span class="n">metal</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    
+    <span class="c1"># Si existen las columnas, calculamos la suma</span>
+    <span class="k">if</span> <span class="n">columnas</span><span class="p">:</span>
+        <span class="n">train</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">etapa</span><span class="si">}</span><span class="s1">total_conc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">columnas</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+        <span class="n">train</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">etapa</span><span class="si">}</span><span class="s1">total_conc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Suma de concentraciones en etapa: </span><span class="si">{</span><span class="n">etapa</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Suma de concentraciones (%)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/40e121ca06db7fe92c26ab0af040a142f410ea65ea458af7a0276840627e4ceb.png" src="_images/40e121ca06db7fe92c26ab0af040a142f410ea65ea458af7a0276840627e4ceb.png" />
+<img alt="_images/d09bf93d0e7acdf9185f25665dfdbe2046db25a1e07a52441abf1a034dc984fa.png" src="_images/d09bf93d0e7acdf9185f25665dfdbe2046db25a1e07a52441abf1a034dc984fa.png" />
+<img alt="_images/bc7510210f3d61da8681c115cc465c32b10bebbe9d34debc7fd2f4e6be885790.png" src="_images/bc7510210f3d61da8681c115cc465c32b10bebbe9d34debc7fd2f4e6be885790.png" />
+<img alt="_images/1864b771042443da589621a4d181edd5f6596ec3b2654d2cb827d521d392bd07.png" src="_images/1864b771042443da589621a4d181edd5f6596ec3b2654d2cb827d521d392bd07.png" />
+</div>
+</div>
+<p><strong>NOTA:</strong>
+<br> Se eliminaron filas donde las concentraciones totales eran muy bajas o nulas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">smape</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+    <span class="n">numerator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y_true</span><span class="p">)</span>
+    <span class="n">denominator</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_pred</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="c1"># Evitar división por cero</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">denominator</span> <span class="o">!=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numerator</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">/</span> <span class="n">denominator</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># sMAPE final ponderado</span>
+<span class="k">def</span> <span class="nf">smape_final</span><span class="p">(</span><span class="n">y_true_rougher</span><span class="p">,</span> <span class="n">y_pred_rougher</span><span class="p">,</span> <span class="n">y_true_final</span><span class="p">,</span> <span class="n">y_pred_final</span><span class="p">):</span>
+    <span class="n">smape_r</span> <span class="o">=</span> <span class="n">smape</span><span class="p">(</span><span class="n">y_true_rougher</span><span class="p">,</span> <span class="n">y_pred_rougher</span><span class="p">)</span>
+    <span class="n">smape_f</span> <span class="o">=</span> <span class="n">smape</span><span class="p">(</span><span class="n">y_true_final</span><span class="p">,</span> <span class="n">y_pred_final</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">smape_r</span> <span class="o">+</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="n">smape_f</span>
+    
+<span class="k">def</span> <span class="nf">smape_scorer</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+    <span class="n">numerator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y_true</span><span class="p">)</span>
+    <span class="n">denominator</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y_pred</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">denominator</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">numerator</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">denominator</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numerator</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">/</span> <span class="n">denominator</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Convertirlo en scorer negativo (porque cross_val_score maximiza)</span>
+<span class="n">neg_smape</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">smape_scorer</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # --- Buscar mejores combinaciones ---</span>
+<span class="c1"># mejor_modelo = None</span>
+<span class="c1"># mejor_params = {}</span>
+<span class="c1"># mejor_smape = float(&#39;inf&#39;)</span>
+
+<span class="c1"># print(&quot;Probando combinaciones...\n&quot;)</span>
+
+<span class="c1"># # Probar Random Forest con distintas combinaciones</span>
+<span class="c1"># for n in range(5, 101, 10):</span>
+<span class="c1">#     for d in range (3, 7):</span>
+<span class="c1">#         modelo = RandomForestRegressor(n_estimators=n, max_depth=d, random_state=12345)</span>
+        
+<span class="c1">#         score_r = -cross_val_score(modelo, X_train, y_train_rougher, cv=5, scoring=neg_smape).mean()</span>
+<span class="c1">#         score_f = -cross_val_score(modelo, X_train, y_train_final, cv=5, scoring=neg_smape).mean()</span>
+<span class="c1">#         total = 0.25 * score_r + 0.75 * score_f</span>
+
+<span class="c1">#         print(f&quot;RandomForest (n={n}, depth={d}) → sMAPE: Rougher={score_r:.2f}%, Final={score_f:.2f}%, Total={total:.2f}%&quot;)</span>
+        
+<span class="c1">#         if total &lt; mejor_smape:</span>
+<span class="c1">#             mejor_smape = total</span>
+<span class="c1">#             mejor_modelo = &quot;RandomForest&quot;</span>
+<span class="c1">#             mejor_params = {&#39;n_estimators&#39;: n, &#39;max_depth&#39;: d}</span>
+
+<span class="c1"># # Probar Decision Tree con distintas profundidades</span>
+<span class="c1"># for d in range(3, 11):</span>
+<span class="c1">#     modelo = DecisionTreeRegressor(max_depth=d, random_state=12345)</span>
+
+<span class="c1">#     score_r = -cross_val_score(modelo, X_train, y_train_rougher, cv=5, scoring=neg_smape).mean()</span>
+<span class="c1">#     score_f = -cross_val_score(modelo, X_train, y_train_final, cv=5, scoring=neg_smape).mean()</span>
+<span class="c1">#     total = 0.25 * score_r + 0.75 * score_f</span>
+
+<span class="c1">#     print(f&quot;DecisionTree (depth={d}) → sMAPE: Rougher={score_r:.2f}%, Final={score_f:.2f}%, Total={total:.2f}%&quot;)</span>
+
+<span class="c1">#     if total &lt; mejor_smape:</span>
+<span class="c1">#         mejor_smape = total</span>
+<span class="c1">#         mejor_modelo = &quot;DecisionTree&quot;</span>
+<span class="c1">#         mejor_params = {&#39;max_depth&#39;: d}</span>
+
+<span class="c1"># # --- Mostrar el mejor resultado ---</span>
+<span class="c1"># print(&quot;\n Mejor modelo encontrado:&quot;)</span>
+<span class="c1"># print(f&quot;Modelo: {mejor_modelo}&quot;)</span>
+<span class="c1"># print(f&quot;Parámetros: {mejor_params}&quot;)</span>
+<span class="c1"># print(f&quot;sMAPE Total: {mejor_smape:.2f}%&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nota">
+<h1><strong>NOTA:</strong><a class="headerlink" href="#nota" title="Link to this heading">#</a></h1>
+<p>El código anterior decidí dejarlo comentado debido al tiempo que tarda en compilar.
+<BR> El código realiza una búsqueda para encontrar los mejores hiperparámetros tanto en ramdom forest como en decision tree y el resultado fue usar RANDOM FOREST n=5, d=4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista de modelos</span>
+<span class="n">modelos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;LinearRegression&quot;</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
+    <span class="s2">&quot;RandomForest&quot;</span><span class="p">:</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">12345</span><span class="p">),</span>
+    <span class="c1">#&quot;DecisionTree&quot;: DecisionTreeRegressor(max_depth=6, random_state=12345)</span>
+<span class="p">}</span>
+
+<span class="c1"># Diccionarios para guardar resultados</span>
+<span class="n">resultados_rougher</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">resultados_final</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Evaluar cada modelo con cross_val_score para cada objetivo</span>
+<span class="k">for</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">modelo</span> <span class="ow">in</span> <span class="n">modelos</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># Rougher</span>
+    <span class="n">scores_r</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train_rougher</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">neg_smape</span><span class="p">)</span>
+    <span class="c1"># Final</span>
+    <span class="n">scores_f</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train_final</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">neg_smape</span><span class="p">)</span>
+    
+    <span class="c1"># Convertimos a positivos (porque smape es error, más bajo es mejor)</span>
+    <span class="n">resultados_rougher</span><span class="p">[</span><span class="n">nombre</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">scores_r</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">resultados_final</span><span class="p">[</span><span class="n">nombre</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">scores_f</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Mostrar resultados ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modelo              | sMAPE Rougher  | sMAPE Final  | sMAPE Total&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">modelos</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">resultados_rougher</span><span class="p">[</span><span class="n">nombre</span><span class="p">]</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">resultados_final</span><span class="p">[</span><span class="n">nombre</span><span class="p">]</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">r</span> <span class="o">+</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="n">f</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nombre</span><span class="si">:</span><span class="s2">&lt;19</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s2">&gt;13.2f</span><span class="si">}</span><span class="s2">% | </span><span class="si">{</span><span class="n">f</span><span class="si">:</span><span class="s2">&gt;11.2f</span><span class="si">}</span><span class="s2">% | </span><span class="si">{</span><span class="n">total</span><span class="si">:</span><span class="s2">&gt;11.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modelo              | sMAPE Rougher  | sMAPE Final  | sMAPE Total
+--------------------------------------------------------------------------------
+LinearRegression    |         10.85% |       10.96% |       10.93%
+RandomForest        |         10.47% |        9.29% |        9.58%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener etiquetas verdaderas desde el conjunto completo</span>
+<span class="n">y_test_rougher</span> <span class="o">=</span> <span class="n">full</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X_test</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;rougher.output.recovery&#39;</span><span class="p">]</span>
+<span class="n">y_test_final</span> <span class="o">=</span> <span class="n">full</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X_test</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;final.output.recovery&#39;</span><span class="p">]</span>
+
+<span class="c1"># Paso 2: si hay NaNs en las etiquetas, filtra todo junto</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">y_test_rougher</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">y_test_final</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+<span class="n">y_test_rougher</span> <span class="o">=</span> <span class="n">y_test_rougher</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+<span class="n">y_test_final</span> <span class="o">=</span> <span class="n">y_test_final</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">y_test_rougher</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_test_rougher</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>  <span class="c1"># Debe ser 0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5290,)
+0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eliminar filas con NaN en X_test y etiquetas correspondientes</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">X_test</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+<span class="n">y_test_rougher</span> <span class="o">=</span> <span class="n">y_test_rougher</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+<span class="n">y_test_final</span> <span class="o">=</span> <span class="n">y_test_final</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NaNs en X_train:&quot;</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NaNs en X_test:&quot;</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores infinitos en X_train:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores infinitos en X_test:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NaNs en y_train_rougher:&quot;</span><span class="p">,</span> <span class="n">y_train_rougher</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NaNs en y_train_final:&quot;</span><span class="p">,</span> <span class="n">y_train_final</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NaNs en y_test_rougher:&quot;</span><span class="p">,</span> <span class="n">y_test_rougher</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NaNs en y_test_final:&quot;</span><span class="p">,</span> <span class="n">y_test_final</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NaNs en X_train: 0
+NaNs en X_test: 0
+Valores infinitos en X_train: 0
+Valores infinitos en X_test: 0
+NaNs en y_train_rougher: 0
+NaNs en y_train_final: 0
+NaNs en y_test_rougher: 0
+NaNs en y_test_final: 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Entrenar modelo óptimo con TODOS los datos de entrenamiento ---</span>
+<span class="n">best_model_r</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">12345</span><span class="p">)</span>
+<span class="n">best_model_f</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">12345</span><span class="p">)</span>
+
+<span class="n">best_model_r</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train_rougher</span><span class="p">)</span>
+<span class="n">best_model_f</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train_final</span><span class="p">)</span>
+
+<span class="c1"># --- Predecir sobre X_test ---</span>
+<span class="n">y_pred_r</span> <span class="o">=</span> <span class="n">best_model_r</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_pred_f</span> <span class="o">=</span> <span class="n">best_model_f</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># --- Calcular sMAPE final ---</span>
+<span class="n">smape_r</span> <span class="o">=</span> <span class="n">smape</span><span class="p">(</span><span class="n">y_test_rougher</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_pred_r</span><span class="p">)</span>
+<span class="n">smape_f</span> <span class="o">=</span> <span class="n">smape</span><span class="p">(</span><span class="n">y_test_final</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_pred_f</span><span class="p">)</span>
+<span class="n">smape_total</span> <span class="o">=</span> <span class="n">smape_final</span><span class="p">(</span><span class="n">y_test_rougher</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_pred_r</span><span class="p">,</span> <span class="n">y_test_final</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_pred_f</span><span class="p">)</span>
+
+<span class="c1"># --- Mostrar resultados ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sMAPE Rougher (test): </span><span class="si">{</span><span class="n">smape_r</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sMAPE Final   (test): </span><span class="si">{</span><span class="n">smape_f</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sMAPE Total   (test): </span><span class="si">{</span><span class="n">smape_total</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sMAPE Rougher (test): 9.84%
+sMAPE Final   (test): 9.79%
+sMAPE Total   (test): 9.80%
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>CONCLUSION</strong></p>
+<p>El modelo predice con un error promedio del 9.8% en las etapas clave del proceso de recuperación de oro.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="calculo_recueperacion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Cálculo de la recuperación</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Proyecto Gold Recovery</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nota"><strong>NOTA:</strong></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos A. Ibarra Del Ángel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
