@@ -1,4 +1,4 @@
-Proyecto realizado en el BootCamp TripleTen
+Análisis realizado en TripleTen
 
 Simular el proceso de recuperación del oro del mineral de oro.
 
