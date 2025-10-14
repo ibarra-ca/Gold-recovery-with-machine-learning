@@ -2,9 +2,9 @@ Análisis realizado en TripleTen
 
 Simular el proceso de recuperación del oro del mineral de oro.
 
-Para resolver el problema, necesitaremos una nueva métrica. Se llama sMAPE, o error medio absoluto porcentual simétrico.
+Para resolver el problema usé una métrica llamada sMAPE, o error medio absoluto porcentual simétrico.
 
-Necesitamos predecir dos valores:
+Se necesitó predecir dos valores:
 
 - La recuperación del concentrado rougher rougher.output.recovery.
 - La recuperación final del concentrado final.output.recovery.
